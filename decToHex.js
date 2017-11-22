@@ -2,7 +2,8 @@
 const decToHex = decValue => {
   // Make sure the decValue arg is an integer, or at least willing to pretend.
   if (!isNaN(parseInt(decValue))) {
-    // Adding _int32's value to negative integer should effectively hack a 32-bit two's complement, skipping binary conversion step.
+    // JS will simply put a minus sign in front of negative hex values, which is not what we want.
+    // Adding _int32's value to a negative integer should effectively hack in a 32-bit two's complement, obviating the binary conversion step.
     const _int32 = 0x100000000; // *Other bit values to be included later.
 
     // Node/JS will incorporate decimal points into hex values. For example, a 1.5 becomes a 1.8 (8 being half of 16, of course).
