@@ -1,13 +1,18 @@
 // Reinventing the wheel has its place.
-const decToHex = int => {
-  // Make sure the int arg is an integer, or at least willing to pretend.
-  if (!isNaN(parseInt(int))) {
-    // Adding _uint32's value to negative integer should effectively hack a 32-bit two's complement, skipping binary conversion step.
-    const _uint32 = 0x100000000; // *Other bit values to be included later.
-    // For now we'll make everything an integer for simplicity's sake
-    int = parseInt(int);
-    const hexValue = int >= 0 ? int.toString(16) : (int + _uint32).toString(16);
-    console.log(`${int} = 0x${hexValue}`);
+const decToHex = decValue => {
+  // Make sure the decValue arg is an integer, or at least willing to pretend.
+  if (!isNaN(parseInt(decValue))) {
+    // Adding _int32's value to negative integer should effectively hack a 32-bit two's complement, skipping binary conversion step.
+    const _int32 = 0x100000000; // *Other bit values to be included later.
+
+    // Node/JS will incorporate decimal points into hex values. For example, a 1.5 becomes a 1.8 (8 being half of 16, of course).
+    // We don't want that! Not now anyway.
+    // So for now we'll allow float args in, but they'll be integers by the time we're done with them.
+    decValue = parseInt(decValue);
+
+    const hexValue =
+      decValue >= 0 ? decValue.toString(16) : (decValue + _int32).toString(16);
+    console.log(`${decValue} = 0x${hexValue}`);
   } else {
     // TODO: deal with range limits, bits/signed/unsigned values, etc.
     console.log('Error: Input must be a number');
@@ -15,12 +20,12 @@ const decToHex = int => {
 };
 
 // test samples
-decToHex();
-decToHex(1224);
-decToHex(13.5);
-decToHex(255);
-decToHex(256);
-decToHex(65535);
-decToHex(-65535);
-decToHex(3);
-decToHex(-3);
+decToHex(); // Error: Input must be a number
+decToHex(1224); // 1224 = 0x4c8
+decToHex(13.5); // 13 = 0xd
+decToHex(255); // 255 = 0xff
+decToHex(256); // 256 = 0x100
+decToHex(65535); // 65535 = 0xffff
+decToHex(-65535); // -65535 = 0xffff0001
+decToHex(3); // 3 = 0x3
+decToHex(-3); // -3 = 0xfffffffd
