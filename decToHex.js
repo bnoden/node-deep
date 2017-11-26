@@ -22,6 +22,7 @@ const decToHex = decValue => {
 
 // test samples
 decToHex(); // Error: Input must be a number
+decToHex('abc'); // Error: Input must be a number
 decToHex(1224); // 1224 = 0x4c8
 decToHex(13.5); // 13 = 0xd
 decToHex(255); // 255 = 0xff
