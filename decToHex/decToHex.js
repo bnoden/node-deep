@@ -1,5 +1,5 @@
 // Reinventing the wheel has its place.
-const decToHex = decValue => {
+decToHex = decValue => {
   // Make sure the decValue arg is an integer, or at least willing to pretend.
   if (!isNaN(parseInt(decValue))) {
     // JS will simply put a minus sign in front of negative hex values, which is not what we want.
@@ -21,6 +21,7 @@ const decToHex = decValue => {
 };
 
 // test samples
+console.log('BEGIN decToHex.js Test Samples:\n');
 decToHex(); // Error: Input must be a number
 decToHex('abc'); // Error: Input must be a number
 decToHex(1224); // 1224 = 0x4c8
@@ -31,3 +32,4 @@ decToHex(65535); // 65535 = 0xffff
 decToHex(-65535); // -65535 = 0xffff0001
 decToHex(3); // 3 = 0x3
 decToHex(-3); // -3 = 0xfffffffd
+console.log('\nEND decToHex.js Test Samples.\n');
