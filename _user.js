@@ -12,11 +12,11 @@ console.log();
 console.log('Current OS: ' + currentOS);
 console.log();
 
-const userTest = () => {
+const userLog = () => {
   return `\n${Date()}\nUsername: ${_userInfo.username}\nCurrent OS: ${currentOS}\n`;
 };
 
-fs.appendFile('user_test.txt', userTest(), err => {
+fs.appendFile('user_log.txt', userLog(), err => {
   if (err) {
     console.log('error');
   }
