@@ -16,8 +16,14 @@ const userLog = () => {
   return `\n${Date()}\nUsername: ${_userInfo.username}\nCurrent OS: ${currentOS}\n`;
 };
 
-fs.appendFile('user_log.txt', userLog(), err => {
+fs.appendFile('.user_log', userLog(), err => {
   if (err) {
     console.log('error');
   }
 });
+
+module.exports = {
+  userLog,
+  _userInfo,
+  currentOS
+};
