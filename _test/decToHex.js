@@ -1,13 +1,13 @@
 const fs = require('fs');
-const dh = require('../decToHex');
+const { decToHex } = require('../decToHex');
 
 const decArray = ['', 'abc', 1224, 13.5, 255, 256, 65535, -65535, 3, -3];
 
 const samples = (s, o) => {
   s = '';
   for (let i in decArray) {
-    o = dh.decToHex(decArray[i]).split(' ').length === 1 ? '0x' : '';
-    s += `${decArray[i]} = ${o}${dh.decToHex(decArray[i])}\n`;
+    o = decToHex(decArray[i]).split(' ').length === 1 ? '0x' : '';
+    s += `${decArray[i]} = ${o}${decToHex(decArray[i])}\n`;
   }
   return s;
 };
