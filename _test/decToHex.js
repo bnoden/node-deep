@@ -7,12 +7,13 @@ const samples = (s, o) => {
   s = '';
   for (let i in decArray) {
     o = decToHex(decArray[i])[1] === 'r' ? '' : '0x';
+    if (decArray[i] === '') { decArray[i] = "''"}
     s += `${decArray[i]} = ${o}${decToHex(decArray[i])}\n`;
   }
   return s;
 };
 
-const message = 'Change "o" in samples()';
+const message = '';
 
 const testSample = () => {
   return `\n${Date()}\nmessage: ${message}\n\nBEGIN\n${samples()}END\n`;
