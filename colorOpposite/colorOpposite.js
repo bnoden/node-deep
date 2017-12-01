@@ -1,5 +1,5 @@
 // hexColorValue should be a string with a leading '#' followed by 6 hexidecimal characters
-const ColorOpposites = hexColorValue => {
+module.exports.colorOpposite = hexColorValue => {
   // Separate RGB values and convert to Numbers.
   const R = Number(`0x${hexColorValue[1] + hexColorValue[2].toString(16)}`);
   const G = Number(`0x${hexColorValue[3] + hexColorValue[4].toString(16)}`);
