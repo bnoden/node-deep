@@ -7,7 +7,6 @@ const samples = (s, o) => {
   s = '';
   for (let i in decArray) {
     o = decToHex(decArray[i])[1] === 'r' ? '' : '0x';
-    if (decArray[i] === '') { decArray[i] = "''"}
     s += `${decArray[i]} = ${o}${decToHex(decArray[i])}\n`;
   }
   return s;
