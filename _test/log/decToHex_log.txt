@@ -1,0 +1,16 @@
+
+Fri Dec 01 2017 01:23:19 GMT-0600 (Central Standard Time)
+message:
+
+BEGIN
+ = Error: Input must be a number
+abc = Error: Input must be a number
+1224 = 0x4c8
+13.5 = 0xd
+255 = 0xff
+256 = 0x100
+65535 = 0xffff
+-65535 = 0xffff0001
+3 = 0x3
+-3 = 0xfffffffd
+END

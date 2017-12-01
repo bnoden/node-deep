@@ -1,0 +1,28 @@
+
+Fri Dec 01 2017 01:10:09 GMT-0600 (Central Standard Time)
+BEGIN
+The opposite of #FFFFFF is #000000
+The opposite of #000000 is #ffffff
+The opposite of #543210 is #abefcd
+The opposite of #020202 is #fdfdfd
+The opposite of #D0D0D0 is #2f2f2f
+The opposite of #B01010 is #4fefef
+The opposite of #8182DE is #7e217d
+The opposite of #0DBA2D is #f2d245
+The opposite of #261C05 is #d9fae3
+END
+
+Fri Dec 01 2017 01:22:10 GMT-0600 (Central Standard Time)
+message: Switch g and b
+
+BEGIN
+The opposite of #FFFFFF is #000000
+The opposite of #000000 is #ffffff
+The opposite of #543210 is #abcdef
+The opposite of #020202 is #fdfdfd
+The opposite of #D0D0D0 is #2f2f2f
+The opposite of #B01010 is #4fefef
+The opposite of #8182DE is #7e7d21
+The opposite of #0DBA2D is #f245d2
+The opposite of #261C05 is #d9e3fa
+END

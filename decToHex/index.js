@@ -1,5 +1,6 @@
 // Reinventing the wheel has its place.
-module.exports.decToHex = decValue => {
+// TODO: deal with range limits, bits/signed/unsigned values, etc.
+module.exports.decToHex = (decValue, hexValue) => {
   // Make sure the decValue arg is an integer, or at least willing to pretend.
   if (!isNaN(parseInt(decValue))) {
     // JS will simply put a minus sign in front of negative hex values, which is not what we want.
@@ -11,25 +12,9 @@ module.exports.decToHex = decValue => {
     // So for now we'll allow float args in, but they'll be integers by the time we're done with them.
     decValue = parseInt(decValue);
 
-    const hexValue =
+    hexValue =
       decValue >= 0 ? decValue.toString(16) : (decValue + _int32).toString(16);
-    console.log(`${decValue} = 0x${hexValue}`);
-  } else {
-    // TODO: deal with range limits, bits/signed/unsigned values, etc.
-    console.log('Error: Input must be a number');
   }
-};
 
-// test samples
-console.log('BEGIN decToHex.js Test Samples:\n');
-decToHex(); // Error: Input must be a number
-decToHex('abc'); // Error: Input must be a number
-decToHex(1224); // 1224 = 0x4c8
-decToHex(13.5); // 13 = 0xd
-decToHex(255); // 255 = 0xff
-decToHex(256); // 256 = 0x100
-decToHex(65535); // 65535 = 0xffff
-decToHex(-65535); // -65535 = 0xffff0001
-decToHex(3); // 3 = 0x3
-decToHex(-3); // -3 = 0xfffffffd
-console.log('\nEND decToHex.js Test Samples.\n');
+  return hexValue ? hexValue : 'Error: Input must be a number';
+};

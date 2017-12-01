@@ -16,5 +16,5 @@ module.exports.colorOpposite = hexColorValue => {
   if (g.length === 1) { g += '0'; }
   if (b.length === 1) { b += '0'; }
 
-  return '#' + r + b + g;
+  return '#' + r + g + b;
 };
