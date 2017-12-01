@@ -6,13 +6,13 @@ const decArray = ['', 'abc', 1224, 13.5, 255, 256, 65535, -65535, 3, -3];
 const samples = (s, o) => {
   s = '';
   for (let i in decArray) {
-    o = decToHex(decArray[i])[1] === 'r' ? '' : '0x';
+    o = decToHex(decArray[i])[1] > 'f' ? '' : '0x';
     s += `${decArray[i]} = ${o}${decToHex(decArray[i])}\n`;
   }
   return s;
 };
 
-const message = '';
+const message = '> f';
 
 const testSample = () => {
   return `\n${Date()}\nmessage: ${message}\n\nBEGIN\n${samples()}END\n`;
