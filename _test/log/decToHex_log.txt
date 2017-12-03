@@ -126,3 +126,21 @@ abc = decToHex(): Input must be a number
 3 = 0x3
 -3 = 0xfffffffd
 END
+
+Sun Dec 03 2017 08:13:31 GMT-0600 (Central Standard Time)
+message: Show if pass or fail
+
+BEGIN
+ = decToHex(): Input must be a number PASS
+abc = decToHex(): Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+
+10 of 10 tests passed
+END
