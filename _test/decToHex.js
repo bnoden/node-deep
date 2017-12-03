@@ -3,8 +3,8 @@ const { decToHex } = require('../decToHex');
 
 const decArray = ['', 'abc', 1224, 13.5, 255, 256, 65535, -65535, 3, -3];
 const solution = [
-  'decToHex(): Input must be a number',
-  'decToHex(): Input must be a number',
+  'Input must be a number',
+  'Input must be a number',
   '4c8',
   'd',
   'ff',

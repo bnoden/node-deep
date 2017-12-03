@@ -11,7 +11,7 @@ const decToHex = (decValue, hexValue) => {
       decValue >= 0 ? decValue.toString(16) : toInt32(decValue).toString(16);
   }
 
-  return hexValue ? hexValue : 'decToHex(): Input must be a number';
+  return hexValue ? hexValue : 'Input must be a number';
 };
 
 // JS will simply put a minus sign in front of negative hex values, which is not what we want.
