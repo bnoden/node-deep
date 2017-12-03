@@ -41,3 +41,20 @@ The opposite of #8182DE is #7e7d21
 The opposite of #0DBA2D is #f245d2
 The opposite of #261C05 is #d9e3fa
 END
+
+Sun Dec 03 2017 08:30:24 GMT-0600 (Central Standard Time)
+message: Show if pass or fail
+
+BEGIN
+The opposite of #FFFFFF is #000000 PASS
+The opposite of #000000 is #ffffff PASS
+The opposite of #543210 is #abcdef PASS
+The opposite of #020202 is #fdfdfd PASS
+The opposite of #D0D0D0 is #2f2f2f PASS
+The opposite of #B01010 is #4fefef PASS
+The opposite of #8182DE is #7e7d21 PASS
+The opposite of #0DBA2D is #f245d2 PASS
+The opposite of #261C05 is #d9e3fa PASS
+
+9 of 9 tests passed
+END
