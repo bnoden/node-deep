@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <input class="message-input submit" style="font-size: 18px; width: 600px; height: 28px;">
+  </input>
+    <div class="send-message" style="border-radius: 8px; cursor: pointer; width: 50px; background-color: #F24E4E; margin-top: 5px; padding: 10px; color: #ffffff">
+      submit
+    </div>
+    <div class="message" style="font-size: 18px">
+      
+    </div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  
+    const urlParams = new URLSearchParams(window.location.search);
+    const user = urlParams.get('user');
+    const room = urlParams.get('room');
+    console.log(user)
+    console.log(room)
+    
+    const socket = io();
+    const messageInput = document.querySelector('.message-input');
+    const nextMessage = document.querySelector('.message');
+    const btnMessage = document.querySelector('.send-message');
+    
+    socket.on('connect', () => {
+      console.log('connected to server')
+      
+      socket.emit('join', {
+        user,
+        room
+      });
+      
+      socket.on('userJoined', message => {
+        nextMessage.innerText += printMessage(message);
+      });
+      
+      btnMessage.onclick = () => {
+        socket.broadcast('sendMessage', message => {
+          nextMessage.innerText += `\n${messageInput.value}`;
+          
+        })
+        messageInput.value = '';
+      }
+      
+      
+      
+      // socket.on('newMessage', (message) => {
+      //   console.log('Message received', message);
+      // });
+      // 
+      // btnMessage.onclick = () => {
+      //   socket.emit('sendMessage', {
+      //     from: user,
+      //     message: "Thanks a lot"
+      //   }, (ok) => {
+      //     console.log(ok)
+      //   })
+      //   if (messageInput.value) {
+      //     nextMessage.innerText += `\n${user}: ${messageInput.value}`;
+      //     messageInput.value = '';
+      //   }
+      // }
+      
+      socket.on('disconnect', () => {
+        console.log('Disconnected...')
+      });
+      
+      const printMessage = (message) => `\n${message}`;
+    });
+    
+    
+    
+  </script>
+</html>
