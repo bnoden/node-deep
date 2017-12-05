@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { decToHex } = require('../decToHex');
 
-const decArray = ['', 'abc', 1224, 13.5, 255, 256, 65535, -65535, 3, -3];
+const decArray = ['', 'abc', 1224, 13.5, 255, 256, 65535, -65535, 3, -3, 16383, -8192];
 const solution = [
   'Input must be a number',
   'Input must be a number',
@@ -12,7 +12,9 @@ const solution = [
   'ffff',
   'ffff0001',
   '3',
-  'fffffffd'
+  'fffffffd',
+  '3fff',
+  'e000'
 ];
 
 const samples = (s, o, numberPassed, pass) => {
