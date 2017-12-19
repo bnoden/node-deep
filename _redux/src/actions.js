@@ -2,7 +2,7 @@ import { CREATE_POST, EDIT_POST, SET_FILTER } from './actionTypes';
 
 
 
-export const createPost = (user, text, timestamp) => {
+export const createPost = (user, text) => {
 
 
   return {
@@ -13,7 +13,7 @@ export const createPost = (user, text, timestamp) => {
   };
 };
 
-export const editPost = (id, text, timestamp) => {
+export const editPost = (id, text) => {
 
   return {
     type: EDIT_POST,
