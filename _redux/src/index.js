@@ -14,19 +14,21 @@ const render = () => {
   root.innerText = '';
   const { posts } = store.getState();
   posts.forEach(post => {
+    const { text, timestamp, user } = post;
+
     const item = document.createElement('li');
     item.style.listStyleType = 'none';
 
     const time_stamp = document.createElement('div');
     time_stamp.style.fontSize = '12px';
-    time_stamp.innerText = post.timestamp+'\n';
+    time_stamp.innerText = timestamp+'\n';
     time_stamp.style.backgroundColor = '#F5B3B3';
     time_stamp.style.display = 'none';
 
     const post_contents = document.createElement('p');
     post_contents.style.fontSize = '20px';
     post_contents.style.backgroundColor = '#B3F5D4';
-    post_contents.innerText = post.user + ': ' + post.text;
+    post_contents.innerText = user + ': ' + text;
     post_contents.style.display = 'inline';
     item.appendChild(time_stamp);
     item.appendChild(post_contents);
