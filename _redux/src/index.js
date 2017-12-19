@@ -18,21 +18,22 @@ const render = () => {
     item.style.listStyleType = 'none';
 
     const time_stamp = document.createElement('div');
-    time_stamp.style.fontSize = '10px';
-    time_stamp.innerText = post.timestamp;
+    time_stamp.style.fontSize = '12px';
+    time_stamp.innerText = post.timestamp+'\n';
     time_stamp.style.backgroundColor = '#F5B3B3';
     time_stamp.style.display = 'none';
 
     const post_contents = document.createElement('p');
-    post_contents.style.fontSize = '18px';
+    post_contents.style.fontSize = '20px';
     post_contents.style.backgroundColor = '#B3F5D4';
     post_contents.innerText = post.user + ': ' + post.text;
+    post_contents.style.display = 'inline';
     item.appendChild(time_stamp);
     item.appendChild(post_contents);
     root.appendChild(item);
 
     item.addEventListener('click', () => {
-      time_stamp.style.display = time_stamp.style.display === 'none' ? 'block' : 'none';
+      time_stamp.style.display = time_stamp.style.display === 'none' ? 'inline' : 'none';
     });
   });
 };
