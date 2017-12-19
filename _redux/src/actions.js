@@ -1,23 +1,25 @@
 import { CREATE_POST, EDIT_POST, SET_FILTER } from './actionTypes';
 
-const date = new Date();
-const timestamp = date.getTime();
 
-export const createPost = (user, text) => {
+
+export const createPost = (user, text, timestamp) => {
+
+
   return {
     type: CREATE_POST,
-    timestamp,
     user,
-    text
+    text,
+    timestamp: new Date()
   };
 };
 
-export const editPost = (id, text) => {
+export const editPost = (id, text, timestamp) => {
+
   return {
     type: EDIT_POST,
-    timestamp,
+    user,
     id,
-    text
+    timestamp: new Date()
   };
 };
 

@@ -9,7 +9,6 @@ const unsubscribe = store.subscribe(() => {
 });
 
 const root = document.querySelector('#root');
-root.style.backgroundColor = '#B3F5D4';
 
 const render = () => {
   root.innerText = '';
@@ -17,17 +16,21 @@ const render = () => {
   posts.forEach(post => {
     const item = document.createElement('li');
     item.style.listStyleType = 'none';
-    
-    const time_stamp = document.createElement('p');
-    time_stamp.innerText = Date(post.timestamp);
+
+    const time_stamp = document.createElement('div');
+    time_stamp.style.fontSize = '10px';
+    time_stamp.innerText = post.timestamp;
     time_stamp.style.backgroundColor = '#F5B3B3';
     time_stamp.style.display = 'none';
-    
-    const text = document.createTextNode(post.user + ': ' + post.text);
+
+    const post_contents = document.createElement('p');
+    post_contents.style.fontSize = '18px';
+    post_contents.style.backgroundColor = '#B3F5D4';
+    post_contents.innerText = post.user + ': ' + post.text;
     item.appendChild(time_stamp);
-    item.appendChild(text);
+    item.appendChild(post_contents);
     root.appendChild(item);
-    
+
     item.addEventListener('click', () => {
       time_stamp.style.display = time_stamp.style.display === 'none' ? 'block' : 'none';
     });
