@@ -10,6 +10,8 @@ const unsubscribe = store.subscribe(() => {
 
 const root = document.querySelector('#root');
 
+let showTimeStamp = 0;
+
 const render = () => {
   root.innerText = '';
   const { posts } = store.getState();
@@ -23,8 +25,8 @@ const render = () => {
     time_stamp.style.fontSize = '12px';
     time_stamp.innerText = timestamp+'\n';
     time_stamp.style.backgroundColor = '#F5B3B3';
-    time_stamp.style.display = 'none';
-
+    time_stamp.style.display = showTimeStamp ? 'inline' : 'none';
+    console.log('display:'+time_stamp.style.display);
     const post_contents = document.createElement('p');
     post_contents.style.fontSize = '20px';
     post_contents.style.backgroundColor = '#B3F5D4';
@@ -35,7 +37,8 @@ const render = () => {
     root.appendChild(item);
 
     item.addEventListener('click', () => {
-      time_stamp.style.display = time_stamp.style.display === 'none' ? 'inline' : 'none';
+      time_stamp.style.display = time_stamp.style.display === 'inline' ? 'none' : 'inline';
+      showTimeStamp = time_stamp.style.display === 'inline' ? 1 : 0;
     });
   });
 };
