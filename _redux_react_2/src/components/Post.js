@@ -5,7 +5,7 @@ import Timestamp from './Timestamp';
 import './styles/Post.css';
 
 const Post = ({ user, title, text, category, created, updated }) =>
-  <div style={postStyle}>
+  <div className="Post fadeIn" style={postStyle}>
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>

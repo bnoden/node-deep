@@ -1,11 +1,11 @@
 a:link {
   text-decoration: none;
-  color: #007BBD;
+  color: #007bbd;
 }
 
 a:visited {
   text-decoration: none;
-  color: #007BBD;
+  color: #007bbd;
 }
 
 a:hover {
@@ -16,4 +16,45 @@ a:hover {
 a:active {
   text-decoration: none;
   color: #00318c;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  opacity: 1 \9;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-duration: 0.8s;
+  animation-duration: 0.8s;
 }

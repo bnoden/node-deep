@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import appReducer from './reducers';
-import { createUser, createPost } from './actions';
+import { createUser, createPost, editPost } from './actions';
 import App from './App';
 
 let store = createStore(appReducer);
@@ -19,20 +19,24 @@ store.dispatch(
     category: 'welcome'
   })
 );
-store.dispatch(
-  createPost('midimaster2000', {
-    title: 'first?',
-    text: "ninja'd",
-    category: 'test'
-  })
-);
-store.dispatch(
-  createPost('golbez4u', {
-    title: 'Haha',
-    text: 'lol u2',
-    category: 'test'
-  })
-);
+setTimeout(() => {
+  store.dispatch(
+    createPost('midimaster2000', {
+      title: 'first',
+      text: 'first post',
+      category: 'test'
+    })
+  );
+}, 3700);
+setTimeout(() => {
+  store.dispatch(
+    createPost('golbez4u', {
+      title: 'Haha',
+      text: "ninja'd",
+      category: 'test'
+    })
+  );
+}, 7600);
 
 console.log('initial state:', store.getState());
 store.subscribe(() => console.log('state changed:', store.getState()));
