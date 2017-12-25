@@ -4,7 +4,7 @@ export const createPost = (user, post) => {
   const { title, text, category = 'random' } = post;
 
   if (!title || !text) {
-    throw new Error('title and text required to create post');
+    throw new Error('invalid post, title and text required');
   }
 
   return {
