@@ -25,7 +25,7 @@ const Post = ({ user, title, text, category, created, updated }) =>
     <div style={{ fontSize: '10px', color: '#73ABD1' }}>
       <br />
       <i>
-        Created at: <Timestamp data={created} />, Updated at:{' '}
+        Created: <Timestamp data={created} />, Updated:{' '}
         <Timestamp data={updated} />
       </i>
     </div>

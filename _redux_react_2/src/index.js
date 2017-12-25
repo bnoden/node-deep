@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import appReducer from './reducers';
-import { createUser, createPost, editPost } from './actions';
+import { createUser, createPost } from './actions';
 import App from './App';
 
 let store = createStore(appReducer);
