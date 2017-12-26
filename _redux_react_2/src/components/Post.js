@@ -1,7 +1,7 @@
 import React from 'react';
 
 import User from './User';
-import Timestamp from './Timestamp';
+import Timestamp, { timePosted } from './Timestamp';
 import './styles/Post.css';
 
 const Post = ({ user, title, text, category, created, updated }) =>
@@ -13,27 +13,33 @@ const Post = ({ user, title, text, category, created, updated }) =>
             {title}
           </b>
         </div>
-        <div style={{ fontSize: '14px' }}>
-          <a href="javascript:void(0)">
-            <User {...user} />
-          </a>
+        <div style={{display: 'flex', flexDirection: 'column-reverse'}}>
+          <div style={{ fontSize: '14px' }}>
+            <a href="javascript:void(0)">
+              <User {...user} />
+            </a>
+          </div>
+          <div
+            style={{
+              fontSize: '10px',
+              color: '#73ABD1',
+              display: 'flex',
+              justifyContent: 'flex-end'
+            }}
+          >
+            <br />
+            <i>
+              <Timestamp data={created} />
+            </i>
+          </div>
         </div>
       </div>
       <hr />
       {text}
     </div>
-    <div style={{ fontSize: '10px', color: '#73ABD1' }}>
-      <br />
-      <i>
-        Created: <Timestamp data={created} />, Updated:{' '}
-        <Timestamp data={updated} />
-      </i>
-    </div>
   </div>;
 
 const postStyle = {
-  maxWidth: '60%',
-  height: 'auto',
   fontSize: '16px',
   lineHeight: 1.4,
   backgroundColor: '#E8F2FC',

@@ -7,7 +7,7 @@ export default function postsReducer (state = [], action) {
       const ts = Date.now()
       return [
         ...state,
-        { ...post, created: ts, updated: ts },
+        { ...post, created: ts },
       ]
     }
 
