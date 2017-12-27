@@ -6,15 +6,16 @@ import { createStore } from 'redux';
 import appReducer from './reducers';
 import { createUser, createPost } from './actions';
 import App from './App';
+import './components/styles/Post.css';
 
 let store = createStore(appReducer, {}, DevTools.instrument());
 
 store.dispatch(createUser('bnoden', 'Brandon Oden'));
 store.dispatch(createUser('midimaster2000', 'Yoko Shimomura'));
 store.dispatch(createUser('golbez4u', 'Nobuo Uematsu'));
+store.dispatch(createUser('ProtoMan', '00000000'));
 
 setTimeout(() => {
-  const PREV_HEIGHT = document.body.clientHeight;
   store.dispatch(
     createPost('bnoden', {
       title: '@midimaster2000 Merry Christmas!',
@@ -26,13 +27,9 @@ setTimeout(() => {
       category: 'welcome'
     })
   );
-  const x = window.scrollX;
-  const y = window.scrollY + document.body.clientHeight - PREV_HEIGHT;
-  window.scrollTo(x, y);
-}, 1800);
+}, 1200);
 
 setTimeout(() => {
-  const PREV_HEIGHT = document.body.clientHeight;
   store.dispatch(
     createPost('midimaster2000', {
       title: 'メリークリスマス！',
@@ -45,13 +42,9 @@ setTimeout(() => {
       category: 'test'
     })
   );
-  const x = window.scrollX;
-  const y = window.scrollY + document.body.clientHeight - PREV_HEIGHT;
-  window.scrollTo(x, y);
-}, 6200);
+}, 3800);
 
 setTimeout(() => {
-  const PREV_HEIGHT = document.body.clientHeight;
   store.dispatch(
     createPost('golbez4u', {
       title: 'Haha',
@@ -59,10 +52,34 @@ setTimeout(() => {
       category: 'test'
     })
   );
-  const x = window.scrollX;
-  const y = window.scrollY + document.body.clientHeight - PREV_HEIGHT;
-  window.scrollTo(x, y);
-}, 12700);
+}, 6600);
+
+let protonum = 0;
+const protoPost = () => {
+  const ppost = '0x' + protonum.toString(16).toUpperCase();
+  store.dispatch(
+    createPost('ProtoMan', {
+      title: ppost,
+      text: '0b' + protonum.toString(2),
+      category: 'test'
+    })
+  );
+  ++protonum;
+};
+const postOrDie = e => {
+  if (e.target.classList.contains('Post')) {
+    console.log(
+      `\n\n\n\n\n\n\n\n${e.target.getBoundingClientRect().top}\n\n\n\n\n\n\n\n`
+    );
+    e.target.remove();
+  } else {
+    protoPost();
+  }
+};
+
+document.body.onclick = e => {
+  postOrDie(e);
+};
 
 console.log('initial state:', store.getState());
 store.subscribe(() => console.log('state changed:', store.getState()));

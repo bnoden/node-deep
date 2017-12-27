@@ -13,7 +13,7 @@ const Post = ({ user, title, text, category, created, updated }) =>
             {title}
           </b>
         </div>
-        <div style={{display: 'flex', flexDirection: 'column-reverse'}}>
+        <div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
           <div style={{ fontSize: '14px' }}>
             <a href="javascript:void(0)">
               <User {...user} />
@@ -42,10 +42,7 @@ const Post = ({ user, title, text, category, created, updated }) =>
 const postStyle = {
   fontSize: '16px',
   lineHeight: 1.4,
-  backgroundColor: '#E8F2FC',
   borderStyle: 'solid',
-  borderWidth: '1px',
-  borderColor: '#73ABD1',
   borderRadius: '4px',
   margin: '8px',
   padding: '8px',

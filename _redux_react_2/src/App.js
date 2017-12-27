@@ -19,5 +19,16 @@ const App = ({ store }) =>
       <DevTools />
     </div>
   </Provider>;
+  
+  // export const maintainPosition = () => {
+  //   let prevHeight = document.body.clientHeight;
+  //   setInterval((x, y) => {
+  //     if (prevHeight !== document.body.clientHeight) {
+  //       x = window.scrollX;
+  //       y = window.scrollY + document.body.clientHeight - prevHeight;
+  //       window.scrollTo(x, y);
+  //     }
+  //   }, 100);
+  // };
 
 export default App;
