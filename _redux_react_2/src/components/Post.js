@@ -5,23 +5,23 @@ import Timestamp, { timePosted } from './Timestamp';
 import './styles/Post.css';
 
 const Post = ({ user, title, text, category, created, updated }) =>
-  <div className="Post fadeIn" style={postStyle}>
+  <div className="Post input fadeIn" style={postStyle}>
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className="post-head" style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>
           <b>
             {title}
           </b>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column-reverse' }}>
-          <div style={{ fontSize: '14px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ fontSize: '12px' }}>
             <a href="javascript:void(0)">
               <User {...user} />
             </a>
           </div>
           <div
             style={{
-              fontSize: '10px',
+              fontSize: '9px',
               color: '#73ABD1',
               display: 'flex',
               justifyContent: 'flex-end'
@@ -34,18 +34,20 @@ const Post = ({ user, title, text, category, created, updated }) =>
           </div>
         </div>
       </div>
-      <hr />
-      {text}
+      <div className="post-content closed fadeIn">
+        <hr />
+        {text}
+      </div>
     </div>
   </div>;
 
 const postStyle = {
-  fontSize: '16px',
+  fontSize: '14px',
   lineHeight: 1.4,
   borderStyle: 'solid',
   borderRadius: '4px',
-  margin: '8px',
-  padding: '8px',
+  margin: '2px',
+  padding: '4px',
   fontFamily: 'Verdana, Ariel'
 };
 

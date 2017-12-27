@@ -63,6 +63,18 @@ a:active {
   animation-duration: 0.8s;
 }
 
+.Post {
+  min-width: 480px;
+  max-width: 50vw;
+  max-height: 75vh;
+}
+
+img,
+iframe {
+  max-width: 35vw;
+  max-height: 60vh;
+}
+
 @media only screen and (max-width: 720px) {
   .Post {
     max-width: 80vw;
@@ -73,18 +85,6 @@ a:active {
     max-width: 80vh;
     max-height: 80vh;
   }
-}
-
-.Post {
-  min-width: 480px;
-  min-height: 220px;
-  max-width: 50vw;
-  max-height: 75vh;
-}
-img,
-iframe {
-  max-width: 35vw;
-  max-height: 60vh;
 }
 
 .intrinsic-container {
@@ -115,9 +115,27 @@ iframe {
   background-color: #E8F2FC;
   border-width: 1px;
   border-color: #73ABD1;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .focus {
   background-color: #D1E8FF;
   border-color: #2476AD;
+}
+.post-head {
+  height: 30px;
+}
+.post-content {
+  min-height: 190px;
+}
+.closed {
+  display: none;
+}
+.opened {
+  display: block;
 }

@@ -66,19 +66,9 @@ const protoPost = () => {
   );
   ++protonum;
 };
-const postOrDie = e => {
-  if (e.target.classList.contains('Post')) {
-    console.log(
-      `\n\n\n\n\n\n\n\n${e.target.getBoundingClientRect().top}\n\n\n\n\n\n\n\n`
-    );
-    e.target.remove();
-  } else {
-    protoPost();
-  }
-};
 
-document.body.onclick = e => {
-  postOrDie(e);
+document.body.onclick = () => {
+  protoPost();
 };
 
 console.log('initial state:', store.getState());
