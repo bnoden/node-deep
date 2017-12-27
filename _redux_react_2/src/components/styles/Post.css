@@ -112,9 +112,10 @@ iframe {
 }
 
 .Post {
-  background-color: #E8F2FC;
+  background-color: #FAFBFC;
+  
   border-width: 1px;
-  border-color: #73ABD1;
+  border-color: #FAFBFC;
   cursor: pointer;
   overflow: hidden;
   -webkit-user-select: none;
@@ -124,14 +125,17 @@ iframe {
 }
 
 .focus {
-  background-color: #D1E8FF;
-  border-color: #2476AD;
+  background-color: #9CCDFF;
+  border-color: #FAFBFC;
 }
 .post-head {
   height: 30px;
+  
 }
 .post-content {
   min-height: 190px;
+  background-color: #F0F8FA;
+  border-radius: 4px;
 }
 .closed {
   display: none;

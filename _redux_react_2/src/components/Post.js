@@ -47,7 +47,7 @@ const postStyle = {
   borderStyle: 'solid',
   borderRadius: '4px',
   margin: '2px',
-  padding: '4px',
+  padding: '2px',
   fontFamily: 'Verdana, Ariel'
 };
 
