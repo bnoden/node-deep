@@ -19,14 +19,13 @@ const mapStateToProps = (state, props) => {
 };
 
 const ConnectedPostList = connect(mapStateToProps)(PostList);
-let opening = 0;
 // Maintain position after new post
 const MIN_POST_HEIGHT = 238;
 let prevHeight = document.body.clientHeight;
 const maintainPosition = setInterval(
   (x = window.scrollX, y = window.scrollY) => {
     let diff = document.body.clientHeight - prevHeight;
-    
+
     y = y < MIN_POST_HEIGHT ? y + diff : y;
     window.scroll(x, y);
     prevHeight = document.body.clientHeight;
@@ -61,14 +60,13 @@ const postPosition = setInterval(() => {
     pBottom = 0.0,
     prev = 0.0;
   for (let i = 0; i < plen; i++) {
-    opening = 1;
     prev = getPositionTop(hlist[i]);
     hlist[i].onclick = () => {
       openClose(clist[i]);
     };
     plist[i].ondblclick = () => {
       plist[i].classList.add('closed');
-    }
+    };
 
     if (getPositionTop(hlist[i]) < prev) {
       let x = window.scrollX;
@@ -79,13 +77,16 @@ const postPosition = setInterval(() => {
     pTop = getPositionTop(plist[i]);
     pBottom = getPositionBottom(plist[i]);
 
-    if (pTop > 0 && pTop < MIN_POST_HEIGHT && clist[i].classList.contains('opened')) {
+    if (
+      pTop > 0 &&
+      pTop < MIN_POST_HEIGHT &&
+      clist[i].classList.contains('opened')
+    ) {
       plist[i].classList.add('focus');
     } else {
       plist[i].classList.remove('focus');
     }
   }
-  opening = 0;
 }, 250);
 
 export default ConnectedPostList;

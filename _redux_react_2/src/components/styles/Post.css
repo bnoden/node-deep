@@ -1,4 +1,5 @@
-body.noScroll { /* ...or body.dialogShowing */
+body.noScroll {
+  /* ...or body.dialogShowing */
   overflow: hidden;
 }
 
@@ -105,36 +106,34 @@ iframe {
 
 .intrinsic-container iframe {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
 .Post {
-  background-color: #FAFBFC;
-  
+  background-color: #fafbfc;
   border-width: 1px;
-  border-color: #FAFBFC;
+  border-color: #fafbfc;
   cursor: pointer;
   overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+}
+.Post:hover {
+  background-color: #dae6f2;
 }
 
 .focus {
-  background-color: #9CCDFF;
-  border-color: #FAFBFC;
+  background-color: #9ccdff;
+  border-color: #fafbfc;
 }
 .post-head {
   height: 30px;
-  
 }
+
 .post-content {
   min-height: 190px;
-  background-color: #F0F8FA;
+  background-color: #f0f8fa;
   border-radius: 4px;
 }
 .closed {
