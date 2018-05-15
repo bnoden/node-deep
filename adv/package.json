@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "threads": "SET UV_THREADPOOL_SIZE=2 && node threads"
+  }
+}
