@@ -14,15 +14,14 @@ const text = {
 
 const start = Date.now();
 
-const benchmark = (thread = 0) => {
-  pbkdf2('a', 'b', 100000, 512, 'sha512', () =>
+const benchmark = (thread = 0) =>
+  pbkdf2('a', 'b', 0x186A0, 0b1000000000, 'sha512', () =>
     text.log(`${thread}: ${0.001 * (Date.now() - start)} seconds`)
   );
-};
 
-const log_benchmarks = (i = 1, max = 12) => {
+const log_benchmarks = (i = 1, max = 8) => {
   text.log(
-    `-----------------\nprocess.env.UV_THREADPOOL_SIZE = ${
+    `${'-'.repeat(16)}\nprocess.env.UV_THREADPOOL_SIZE = ${
       process.env.UV_THREADPOOL_SIZE
     }`
   );
