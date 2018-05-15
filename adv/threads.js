@@ -7,7 +7,8 @@ const benchmark = (thread = 0) =>
     console.log(`${thread}:`, `${0.001 * (Date.now() - start)} seconds`)
   );
 
-benchmark(1);
-benchmark(2);
-benchmark(3);
-benchmark(4);
+let i = 1;
+while (i <= 12) {
+  benchmark(i);
+  ++i;
+}

@@ -9,4 +9,4 @@ http
   })
   .listen(_port, _host);
 
-console.log(`Server running on port ${_port}`)
+console.log(`Server running on port ${_port}`);
