@@ -19,7 +19,7 @@ const benchmark = (thread = 0) =>
     text.log(`${thread}: ${0.001 * (Date.now() - start)} seconds`)
   );
 
-const log_benchmarks = (i = 1, max = 8) => {
+const LogBenchmarks = (i = 1, max = 8) => {
   text.log(
     `${'-'.repeat(16)}\nprocess.env.UV_THREADPOOL_SIZE = ${
       process.env.UV_THREADPOOL_SIZE
@@ -32,4 +32,4 @@ const log_benchmarks = (i = 1, max = 8) => {
   }
 };
 
-log_benchmarks();
+LogBenchmarks();
