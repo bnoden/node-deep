@@ -3,10 +3,11 @@ const pbkdf2 = require('crypto').pbkdf2;
 const fs = require('fs');
 
 const start = Date.now();
+const url = 'https://www.google.com';
 
 const doRequest = () =>
   https
-    .request('https://www.google.com', res => {
+    .request(url, res => {
       res.on('data', () => {});
       res.on('end', () => {
         console.log(`${0.001 * (Date.now() - start)} seconds`);
