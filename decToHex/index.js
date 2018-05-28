@@ -16,9 +16,7 @@ const decToHex = (decValue, hexValue) => {
 
 // JS will simply put a minus sign in front of negative hex values, which is not what we want.
 // toInt32 with signed int should effectively obviate binary conversion for a 32-bit two's complement.
-const toInt32 = int => {
-  return int + 0x100000000;
-};
+const toInt32 = int => 0x100000000 + int;
 
 module.exports = {
   decToHex,

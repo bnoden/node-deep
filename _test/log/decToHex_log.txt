@@ -181,3 +181,223 @@ abc = Input must be a number PASS
 
 11 of 11 tests passed
 END
+
+Mon May 28 2018 16:37:32 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 FAIL
+
+11 of 12 tests passed
+END
+
+Mon May 28 2018 16:38:24 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 FAIL
+
+11 of 12 tests passed
+END
+
+Mon May 28 2018 16:42:34 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 FAIL
+
+11 of 12 tests passed
+END
+
+Mon May 28 2018 16:44:19 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+13.5 = 0xd PASS
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+undefined = Input must be a number FAIL
+
+1 of 12 tests passed
+END
+
+Mon May 28 2018 16:44:32 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 FAIL
+
+11 of 12 tests passed
+END
+
+Mon May 28 2018 16:48:25 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 PASS
+
+12 of 12 tests passed
+END
+
+Mon May 28 2018 16:50:02 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0x-ffff FAIL
+3 = 0x3 PASS
+-3 = 0x-3 FAIL
+16383 = 0x3fff PASS
+-8192 = 0x-2000 FAIL
+
+9 of 12 tests passed
+END
+
+Mon May 28 2018 16:50:20 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0x-1vvv FAIL
+3 = 0x3 PASS
+-3 = 0x-3 FAIL
+16383 = 0x3fff PASS
+-8192 = 0x-800 FAIL
+
+9 of 12 tests passed
+END
+
+Mon May 28 2018 16:50:48 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0x-ffff FAIL
+3 = 0x3 PASS
+-3 = 0x-3 FAIL
+16383 = 0x3fff PASS
+-8192 = 0x-2000 FAIL
+
+9 of 12 tests passed
+END
+
+Mon May 28 2018 16:53:40 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 PASS
+
+12 of 12 tests passed
+END
+
+Mon May 28 2018 16:54:49 GMT-0500 (Central Daylight Time)
+message: Show if pass or fail
+
+BEGIN
+ = Input must be a number PASS
+abc = Input must be a number PASS
+1224 = 0x4c8 PASS
+13.5 = 0xd PASS
+255 = 0xff PASS
+256 = 0x100 PASS
+65535 = 0xffff PASS
+-65535 = 0xffff0001 PASS
+3 = 0x3 PASS
+-3 = 0xfffffffd PASS
+16383 = 0x3fff PASS
+-8192 = 0xffffe000 PASS
+
+12 of 12 tests passed
+END
