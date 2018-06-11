@@ -1,11 +1,9 @@
 const cluster = require('cluster');
+const pbkdf2 = require('crypto').pbkdf2;
 
 // If file executed in master mode:
 if (cluster.isMaster) {
-  // Re-execute index.js again in child mode
-  cluster.fork();
-  cluster.fork();
-  cluster.fork();
+  // Re-execute index.js in child mode
   cluster.fork();
 } else {
   console.log('cluster.worker.id:', cluster.worker.id);
@@ -13,14 +11,10 @@ if (cluster.isMaster) {
   const express = require('express');
   const app = express();
 
-  const doWork = duration => {
-    const start = Date.now();
-    while (Date.now() - start < duration) {}
-  };
-
   app.get('/', (req, res) => {
-    doWork(3500);
-    res.send('worker: ' + cluster.worker.id);
+    pbkdf2('a', 'b', 0x186a0, 0b1000000000, 'sha512', () =>
+      res.send('You got Response')
+    );
   });
 
   app.get('/fast', (req, res) => {

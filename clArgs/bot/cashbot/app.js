@@ -11,6 +11,20 @@ const optionsDefinitions = [
 
 const options = clArgs(optionsDefinitions);
 
+const a = (use, like, dislike) =>
+  ((use / 2 + like) / (use / 2 + dislike)).toFixed(2);
+const b = (use, like, dislike) => ((use + like - dislike) / use).toFixed(2);
+
+function compare(use, like, dislike, rating = fn => fn(...arguments)) {
+  console.log(`compare(${[...arguments]}) \t // ${rating(a)} ${rating(b)}`);
+}
+
+compare(100, 12, 8); // 1.07 1.04
+compare(45, 3, 1); // 1.09 1.04
+compare(287, 13, 46); // 0.83 0.89
+compare(12468, 43, 187); // 0.98 0.99
+compare(100, 36, 2); // 1.65 1.34
+
 const getDB = fs.readFileSync('db.json');
 const getBackup = fs.readFileSync('backup.json');
 const data = JSON.parse(getDB);
